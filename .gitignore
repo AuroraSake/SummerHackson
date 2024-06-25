@@ -1,0 +1,10 @@
+#Directories
+x64/
+.vs/
+bin/
+bin-inter/
+data/
+
+#Files
+*.user
+*.exe
