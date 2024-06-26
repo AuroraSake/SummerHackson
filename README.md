@@ -1,5 +1,9 @@
 # SummerHackson
 
+学校課題の2Dゲーム
+今はC++で完全リニューアルしたいと思います。
+元々のアーキテクチャを見るくらいなら死ねる気がしますんで、此度は完全にゼロから、ちゃんとアーキテクチャしてから作りたいと思います。
+
 My original DirectX 2D game for school work.
 Currently just rewritting in C++ and also trying to architecture it "abit" better so it's not looks like the total garbege it does right now.
 
