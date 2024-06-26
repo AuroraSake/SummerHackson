@@ -105,6 +105,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	// èIóπèàóù
 	Uninit();
+    return 0;
 }
 
 //=============================================================================
