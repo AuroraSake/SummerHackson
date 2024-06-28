@@ -9,6 +9,7 @@ src/の中に入ってるのがC++で書き始めたソースファイルです�
 premakeについて：
   プロジェクトの設置は一通り出来ているんですが、preprocessor definationsの設定だけが変える方法がまだ調べています。
   preprocessor definationsの、「親またはプロジェクトの規定値を継承します」をoffにしていただけるとビルドされます。(UNICODEを定義せずに)
+  Edit: DirectXのinclude/library pathのマクロ化がまだ些か問題があります。DirectX SDKインストールフォルダの問題でしょうか、調べる中。
 
 My original DirectX 2D game for school work.
 Currently just rewritting in C++ and also trying to architecture it "abit" better so it's not looks like the total garbege it does right now.
