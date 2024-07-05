@@ -1,3 +1,4 @@
+#pragma  once
 #include "myMath.h"
 #include "Transform.h"
 

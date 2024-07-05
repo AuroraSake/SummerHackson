@@ -392,13 +392,11 @@ BOOL IsMouseCenterTriggered(void)
 //------------------
 long GetMouseX(void)
 {
-	//return mouseState.lX;
-	return GetMousePosX();
+	return mouseState.lX;
 }
 long GetMouseY(void)
 {
-	//return mouseState.lY;
-	return GetMousePosY();
+	return mouseState.lY;
 
 }
 long GetMouseZ(void)

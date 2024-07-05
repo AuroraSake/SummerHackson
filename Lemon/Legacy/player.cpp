@@ -86,8 +86,8 @@ HRESULT InitPlayer(void)
 
 
     CursorPos = { SCREEN_CENTER_X, SCREEN_CENTER_Y, 0.0};
-    mouseX = GetMousePosX();
-    mouseY = GetMousePosY();
+    mouseX = 0;
+    mouseY = 0;
     oldMousePos = { mouseX, mouseY, 0.0 };
 
     g_Load = TRUE;
@@ -129,8 +129,8 @@ void UpdatePlayer(void)
 		AttCounter--;
 
 
-    mouseX = GetMousePosX();
-    mouseY = GetMousePosY();
+    mouseX = 0;
+    mouseY = 0;
 
     CursorPos.x += mouseX - oldMousePos.x;
     CursorPos.y += mouseY - oldMousePos.y;

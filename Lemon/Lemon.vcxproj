@@ -75,8 +75,11 @@
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath);$(DXSDK_DIR)Lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath);$(ProjectDir)</IncludePath>
+    <LibraryPath>$(LibraryPath);$(DXSDK_DIR)Lib\x64;$(VC_LibraryPath_x64);</LibraryPath>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin-inter\$(Platform)$(Configuration)\</IntDir>
+    <ExcludePath>$(CommonExcludePath);$(VC_ExecutablePath_x64);</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
@@ -85,6 +88,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x64;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>\bin-inter$(Platform)$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -102,8 +107,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>src/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src\Lemon;$(ProjectDir)\Legacy</AdditionalIncludeDirectories>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -129,71 +138,68 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="bg.h" />
-    <ClInclude Include="bullet.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="collision.h" />
-    <ClInclude Include="debugproc.h" />
-    <ClInclude Include="effect.h" />
-    <ClInclude Include="enemy.h" />
-    <ClInclude Include="fade.h" />
-    <ClInclude Include="input.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="projectile.h" />
-    <ClInclude Include="renderer.h" />
-    <ClInclude Include="result.h" />
-    <ClInclude Include="score.h" />
-    <ClInclude Include="sound.h" />
-    <ClInclude Include="sprite.h" />
-    <ClInclude Include="src\Lemon\AppEntry.h" />
+    <ClInclude Include="Legacy\bg.h" />
+    <ClInclude Include="Legacy\bullet.h" />
+    <ClInclude Include="Legacy\camera.h" />
+    <ClInclude Include="Legacy\collision.h" />
+    <ClInclude Include="Legacy\debugproc.h" />
+    <ClInclude Include="Legacy\effect.h" />
+    <ClInclude Include="Legacy\enemy.h" />
+    <ClInclude Include="Legacy\fade.h" />
+    <ClInclude Include="Legacy\input.h" />
+    <ClInclude Include="Legacy\main.h" />
+    <ClInclude Include="Legacy\player.h" />
+    <ClInclude Include="Legacy\projectile.h" />
+    <ClInclude Include="Legacy\renderer.h" />
+    <ClInclude Include="Legacy\result.h" />
+    <ClInclude Include="Legacy\score.h" />
+    <ClInclude Include="Legacy\sound.h" />
+    <ClInclude Include="Legacy\sprite.h" />
+    <ClInclude Include="src\LegacySystems.h" />
     <ClInclude Include="src\Lemon\Application.h" />
     <ClInclude Include="src\Lemon\myMath.h" />
     <ClInclude Include="src\Lemon\Sprite2D.h" />
     <ClInclude Include="src\Lemon\Transform.h" />
     <ClInclude Include="src\Lemon\Window.h" />
-    <ClInclude Include="src\myMath.h" />
-    <ClInclude Include="src\Sprite2D.h" />
-    <ClInclude Include="timer.h" />
-    <ClInclude Include="title.h" />
-    <ClInclude Include="tutorial.h" />
-    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="Legacy\timer.h" />
+    <ClInclude Include="Legacy\title.h" />
+    <ClInclude Include="Legacy\tutorial.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bg.cpp" />
-    <ClCompile Include="bullet.cpp" />
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="collision.cpp" />
-    <ClCompile Include="debugproc.cpp" />
-    <ClCompile Include="effect.cpp" />
-    <ClCompile Include="fade.cpp" />
-    <ClCompile Include="input.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="player.cpp" />
-    <ClCompile Include="projectile.cpp" />
-    <ClCompile Include="renderer.cpp" />
-    <ClCompile Include="result.cpp" />
-    <ClCompile Include="score.cpp" />
-    <ClCompile Include="sound.cpp" />
-    <ClCompile Include="sprite.cpp" />
+    <ClCompile Include="Legacy\bg.cpp" />
+    <ClCompile Include="Legacy\bullet.cpp" />
+    <ClCompile Include="Legacy\camera.cpp" />
+    <ClCompile Include="Legacy\collision.cpp" />
+    <ClCompile Include="Legacy\debugproc.cpp" />
+    <ClCompile Include="Legacy\effect.cpp" />
+    <ClCompile Include="Legacy\fade.cpp" />
+    <ClCompile Include="Legacy\input.cpp" />
+    <ClCompile Include="Legacy\player.cpp" />
+    <ClCompile Include="Legacy\projectile.cpp" />
+    <ClCompile Include="Legacy\renderer.cpp" />
+    <ClCompile Include="Legacy\result.cpp" />
+    <ClCompile Include="Legacy\score.cpp" />
+    <ClCompile Include="Legacy\sound.cpp" />
+    <ClCompile Include="Legacy\sprite.cpp" />
+    <ClCompile Include="src\LegacySystems.cpp" />
     <ClCompile Include="src\Lemon\Application.cpp" />
+    <ClCompile Include="src\Lemon\EntryPoint.cpp" />
     <ClCompile Include="src\Lemon\myMath.cpp" />
     <ClCompile Include="src\Lemon\Sprite2D.cpp" />
     <ClCompile Include="src\Lemon\Transform.cpp" />
     <ClCompile Include="src\Lemon\Window.cpp" />
-    <ClCompile Include="src\myMath.cpp" />
-    <ClCompile Include="src\Sprite2D.cpp" />
-    <ClCompile Include="timer.cpp" />
-    <ClCompile Include="title.cpp" />
-    <ClCompile Include="tutorial.cpp" />
-    <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="Legacy\timer.cpp" />
+    <ClCompile Include="Legacy\title.cpp" />
+    <ClCompile Include="Legacy\tutorial.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,7 +5,7 @@
 //
 //=============================================================================
 #pragma once
-
+#include "src/LegacySystems.h"
 
 #pragma warning(push)
 #pragma warning(disable:4005)
@@ -99,16 +99,6 @@ struct vec4
     float w;
 };
 
-
-//*****************************************************************************
-// プロトタイプ宣言
-//*****************************************************************************
-long GetMousePosX(void);
-long GetMousePosY(void);
-char* GetDebugStr(void);
-
-void SetMode(int mode);
-int GetMode(void);
 
 //全滅チェック
 int CheckGameClear(void);

@@ -29,6 +29,7 @@ public:
     void Show();
     bool Update();
 
+    friend class Application;
 private:
     HWND m_HWindow;
     HINSTANCE m_HNowInstance;
