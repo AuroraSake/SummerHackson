@@ -23,8 +23,6 @@ project "Lemon"
 
     files
     {
-        "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp",
         "%{prj.name}/**.h",
         "%{prj.name}/**.cpp"
     }
@@ -33,14 +31,12 @@ project "Lemon"
     {
         "Lemon/src",
         "$(IncludePath)",
-        "$(DXSDK_DIR)Include"
+        "$(DXSDK_DIR)include"
     }
 
     links
     {
         "Lemon",
-        "$(DXSDK_DIR)Lib\x64",
-        "$(LibraryPath)"
     }
 
     filter "system:windows"

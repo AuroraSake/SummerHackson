@@ -23,14 +23,13 @@
 #include "timer.h"
 #include "tutorial.h"
 
-#include "src/Window.h"
+#include "Lemon/Window.h"
 
 
 HRESULT Init(HINSTANCE hInstance, HWND hWnd, BOOL bWindow);
 void Uninit(void);
 void Update(void);
 void Draw(void);
-
 
 //*****************************************************************************
 // グローバル変数:
@@ -58,50 +57,11 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	UNREFERENCED_PARAMETER(lpCmdLine);		// 無くても良いけど、警告が出る（未使用宣言）
 
 	// 時間計測用
-	DWORD dwExecLastTime;
-	DWORD dwFPSLastTime;
-	DWORD dwCurrentTime;
-	DWORD dwFrameCount;
-
     Window window(hInstance, nCmdShow);
     if (!window.CreatWindow(NULL))
         return -1;
     window.Show();
 
-	//if(FAILED(Init(hInstance, window.GetHandle(), true)))//true for windowed
-	//{
-	//	return -1;
-	//}
-	// フレームカウント初期化
-	timeBeginPeriod(1);	// 分解能を設定
-	dwExecLastTime = dwFPSLastTime = timeGetTime();	// システム時刻をミリ秒単位で取得
-	dwCurrentTime = dwFrameCount = 0;
-
-
-	while(1)
-	{
-        dwCurrentTime = timeGetTime();
-        if ((dwCurrentTime - dwFPSLastTime) >= 1000)	// 1秒ごとに実行
-        {
-			dwFPSLastTime = dwCurrentTime;				// FPSを測定した時刻を保存
-			dwFrameCount = 0;							// カウントをクリア
-		}
-
-		if ((dwCurrentTime - dwExecLastTime) >= (1000 / 60))	// 1/60秒ごとに実行
-        {
-            dwExecLastTime = dwCurrentTime;	// 処理した時刻を保存
-
-            //Update();			// 更新処理
-            //Draw();				// 描画処理
-
-
-            dwFrameCount++;
-        }
-        if(!window.Update())
-            break;
-    }
-
-	timeEndPeriod(1);				// 分解能を戻す
 
 	// 終了処理
 	Uninit();

@@ -6,6 +6,22 @@
 #include <vector>
 #include <iostream>
 
+//_____________________________________________________________________//
+//
+// Sprit2D.h
+// 
+// WIP版
+// 
+// 2D sprite をジェネラライズするべき作っている
+// Sprite component および sprite system
+// 
+// 今はoutline段階、一通りの設計だけを作っている
+//
+// To do:
+//  完成したら現プロジェクト内UI含む全ての2D sprite をこのsystemへ移行すること
+//_____________________________________________________________________//
+
+
 class Sprite
 {
     friend class SpriteManager;
