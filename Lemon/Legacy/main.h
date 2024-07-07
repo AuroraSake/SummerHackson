@@ -28,6 +28,8 @@ using namespace DirectX;
 #include "dinput.h"
 #include "mmsystem.h"
 
+#include "myMath.h"
+
 #pragma warning(pop)
 
 //*****************************************************************************
@@ -79,26 +81,6 @@ enum
 	MODE_RESULT,			// リザルト画面
 	MODE_MAX
 };
-
-struct vec2 
-{
-    float x;
-    float y;
-};
-struct vec3
-{
-    float x;
-    float y;
-    float z;
-};
-struct vec4
-{
-    float x;
-    float y;
-    float z;
-    float w;
-};
-
 
 //全滅チェック
 int CheckGameClear(void);

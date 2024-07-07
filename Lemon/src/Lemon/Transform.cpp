@@ -4,7 +4,7 @@
 
 //_____________________________________________________________________//
 //
-// Transform.cpp
+// Transform
 // 
 // 
 // çÏã∆å¯ó¶Ç™ó«Ç≠Ç∑ÇÈÇΩÇﬂÇ…çÏÇ¡ÇΩ
@@ -31,4 +31,11 @@ void Transform::UpdateDirection()
 {
     m_forward = Vector3(0.0f, 0.0f, 1.0f).Rotate(m_rotation);
     m_up      = Vector3(0.0f, 1.0f, 0.0f).Rotate(m_rotation);
+}
+
+
+void Transform::Update()
+{
+    UpdateDirection();
+    UpdateMMatrix();
 }

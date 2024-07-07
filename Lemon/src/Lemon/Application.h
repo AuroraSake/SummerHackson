@@ -5,10 +5,19 @@
 
 #include "Window.h"
 #include "src/LegacySystems.h"
-
-//temp solution.
-//To do: build better systems later
-
+//_____________________________________________________________________//
+//
+// Application
+// 
+// Game Application のメインループおよび処理など
+// 
+// Window class の instance も一個管理している
+// 
+// To do:
+//  Core System (Input, renderer など)の旧式からの更新、組み込み&疎結合
+//  OpenGLサポート向けてGLFWの導入
+//  開発便利性のためのIMGUIの導入
+//_____________________________________________________________________//
 
 class Application
 {

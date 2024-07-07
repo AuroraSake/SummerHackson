@@ -2,7 +2,7 @@
 #include "myMath.h"
 //_____________________________________________________________________//
 //
-// Transform.h
+// Transform
 // 
 // WIP”Å
 // 
@@ -29,4 +29,5 @@ public:
 
     void UpdateMMatrix();
     void UpdateDirection();
+    void Update();
 };

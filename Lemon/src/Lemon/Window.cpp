@@ -73,10 +73,6 @@ bool Window::Update()
             DispatchMessage(&windowMessage);
         }
     }
-    else
-    {
-        UpdateWindow(m_HWindow);
-    }
     return 1;
 }
 
@@ -91,9 +87,6 @@ LRESULT CALLBACK Window::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
     case WM_KEYDOWN:
         switch (wParam)
         {
-        case VK_ESCAPE:
-            DestroyWindow(hWnd);
-            break;
         }
         break;
 

@@ -12,6 +12,7 @@
 #include "collision.h"
 #include "score.h"
 #include "projectile.h"
+#include "InputSystem.h"
 
 //*****************************************************************************
 // ƒ}ƒNƒ’è‹`
@@ -48,6 +49,7 @@ static XMFLOAT3 CursorPos;
 static XMFLOAT3 oldMousePos;
 static XMFLOAT3 oldRightStick;
 
+static InputSystem* pInputSystem;
 static float mouseX;
 static float mouseY;
 
@@ -85,6 +87,7 @@ HRESULT InitPlayer(void)
     GetDevice()->CreateBuffer(&bd, NULL, &g_VertexBuffer);
 
 
+    pInputSystem = InputSystem::Get();
     CursorPos = { SCREEN_CENTER_X, SCREEN_CENTER_Y, 0.0};
     mouseX = 0;
     mouseY = 0;

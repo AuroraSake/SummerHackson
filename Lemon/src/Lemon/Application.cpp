@@ -1,9 +1,10 @@
 #pragma  once
 #include "Application.h"
+#include "Systems.h"
 #include "src/LegacySystems.h"
 //_____________________________________________________________________//
 //
-// Application.cpp
+// Application
 // 
 // Game Application のメインループおよび処理など
 // 
@@ -14,7 +15,6 @@
 //  OpenGLサポート向けてGLFWの導入
 //  開発便利性のためのIMGUIの導入
 //_____________________________________________________________________//
-
 
 
 
@@ -34,28 +34,32 @@ void Application::Run()
     m_Window.Show();
     Init(m_Window.m_HNowInstance, m_Window.m_HWindow, true, pram_DefaultMode);
 
+    InputSystem::Init(m_Window.m_HWindow);
+    InputSystem* const pInputSystem = InputSystem::Get();
 
     timeBeginPeriod(1);
     m_OldTickTime = m_NowTickTime = timeGetTime();
 
     while (true)
     {
+        m_NowTickTime = timeGetTime();
         if (!m_Window.Update())
             break;
         if ((m_NowTickTime - m_OldTickTime) < pram_TickLength)
             continue;
 
-        m_NowTickTime = timeGetTime();
-        m_OldTickTime = m_NowTickTime;
-        m_DTime = (m_NowTickTime - m_OldTickTime) * 0.001f;
+        pInputSystem->MouseFunc();
 
-        Tick();
+        m_DTime = (m_NowTickTime - m_OldTickTime) * 0.001f;
+        m_OldTickTime = m_NowTickTime;
+
+        Tick();//To do: add scene manager
     }
     timeEndPeriod(1);
 }
 
 void Application::Tick()
-{
+{   //temp
     //use this for none rendering update//
     //physics etc
     Update();

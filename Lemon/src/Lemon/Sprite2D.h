@@ -8,7 +8,7 @@
 
 //_____________________________________________________________________//
 //
-// Sprit2D.h
+// Sprit2D
 // 
 // WIP”Å
 // 
@@ -60,7 +60,7 @@ public:
     }
 
     //friend class SystemManager;
-//protected:
+//private:
     static void Init(const ID3D11Device& device)
     {
         if (s_SpriteManager)

@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Lemon\InputSystem.h" />
     <ClInclude Include="Legacy\bg.h" />
     <ClInclude Include="Legacy\bullet.h" />
     <ClInclude Include="Legacy\camera.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Legacy\score.h" />
     <ClInclude Include="Legacy\sound.h" />
     <ClInclude Include="Legacy\sprite.h" />
+    <ClInclude Include="src\Lemon\SceneManager.h" />
     <ClInclude Include="src\LegacySystems.h" />
     <ClInclude Include="src\Lemon\Application.h" />
     <ClInclude Include="src\Lemon\myMath.h" />
@@ -175,6 +177,7 @@
     <ClInclude Include="Legacy\tutorial.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Lemon\InputSystem.cpp" />
     <ClCompile Include="Legacy\bg.cpp" />
     <ClCompile Include="Legacy\bullet.cpp" />
     <ClCompile Include="Legacy\camera.cpp" />
@@ -190,6 +193,7 @@
     <ClCompile Include="Legacy\score.cpp" />
     <ClCompile Include="Legacy\sound.cpp" />
     <ClCompile Include="Legacy\sprite.cpp" />
+    <ClCompile Include="src\Lemon\SceneManager.cpp" />
     <ClCompile Include="src\LegacySystems.cpp" />
     <ClCompile Include="src\Lemon\Application.cpp" />
     <ClCompile Include="src\Lemon\EntryPoint.cpp" />

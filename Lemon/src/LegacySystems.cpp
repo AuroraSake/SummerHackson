@@ -171,12 +171,12 @@ void Draw()
     DrawFade();
 
 #ifdef _DEBUG
-        // デバッグ表示
-        DrawDebugProc();
+    // デバッグ表示
+    DrawDebugProc();
 #endif
 
-        // バックバッファ、フロントバッファ入れ替え
-        Present();
+    // バックバッファ、フロントバッファ入れ替え
+    Present();
 }
 
 
