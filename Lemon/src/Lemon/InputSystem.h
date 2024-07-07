@@ -29,6 +29,8 @@ class InputSystem
 public:
     static InputSystem* const Get();
 
+    tagPOINT CursorPos() const;
+
     friend class Application;
 private:
     InputSystem(const HWND& hWnd);
@@ -38,8 +40,7 @@ private:
     void operator=(InputSystem const&) = delete;
 
     const HWND& m_HWindow;
-
-    tagPOINT m_CursorPos;
+    tagPOINT m_CursorPos = {0, 0};
     //vec2 m_AppCursorPos;
     //Not yet in use: normalized window coordinate
     //window ì‡ê≥ãKç¿ïWÅ@-1 ~ 1

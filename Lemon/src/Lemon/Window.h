@@ -14,8 +14,6 @@ struct WindowPram
 class Window
 {
 public:
-    const bool m_hideCursor = true;
-
     Window(const HINSTANCE& instance, int showWindow);
     ~Window();
 
@@ -36,8 +34,10 @@ private:
     LPSTR m_CommandLine;
     int m_ShowWindow;
     
-    WindowPram m_WindowPrams;
+    bool m_HideCursor = true;
     bool m_Windowed;
+    
+    WindowPram m_WindowPrams;
 
     static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 };

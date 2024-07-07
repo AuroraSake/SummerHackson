@@ -45,15 +45,23 @@ void Application::Run()
         m_NowTickTime = timeGetTime();
         if (!m_Window.Update())
             break;
+        {
+            bool notFocused = GetForegroundWindow() != m_Window.m_HWindow;
+            m_Window.m_HideCursor = !notFocused;
+            if (notFocused)
+                continue;
+        }
+
         if ((m_NowTickTime - m_OldTickTime) < pram_TickLength)
             continue;
 
-        pInputSystem->MouseFunc();
 
         m_DTime = (m_NowTickTime - m_OldTickTime) * 0.001f;
         m_OldTickTime = m_NowTickTime;
 
+        pInputSystem->MouseFunc();
         Tick();//To do: add scene manager
+
     }
     timeEndPeriod(1);
 }

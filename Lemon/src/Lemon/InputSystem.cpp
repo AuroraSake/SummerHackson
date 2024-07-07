@@ -15,9 +15,19 @@ InputSystem* InputSystem::s_InputSystem = nullptr;
 
 InputSystem* const InputSystem::Get()
 {
-    if (s_InputSystem)
-        return s_InputSystem;
+    return s_InputSystem;
 }
+
+tagPOINT InputSystem::CursorPos() const
+{
+    return m_CursorPos;
+}
+
+
+
+InputSystem::InputSystem(const HWND& hWnd)
+    : m_HWindow(hWnd) {}
+
 
 void InputSystem::Init(const HWND& hWnd)
 {
@@ -29,9 +39,6 @@ void InputSystem::Init(const HWND& hWnd)
 //MousePosition and Lock mouse
 void InputSystem::MouseFunc()
 {
-    if (GetForegroundWindow() != m_HWindow)
-        return;
-
     RECT rect;
     GetWindowRect(m_HWindow, &rect);
 
@@ -67,5 +74,5 @@ void InputSystem::MouseFunc()
     if (!inWnd) SetCursorPos(cursorResetPos.x, cursorResetPos.y);
 
     m_CursorPos.x = mouseX - rect.left;
-    m_CursorPos.y = -(mouseY - rect.top);
+    m_CursorPos.y = mouseY - rect.top;
 }

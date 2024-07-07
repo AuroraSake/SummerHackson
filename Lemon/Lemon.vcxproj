@@ -170,6 +170,7 @@
     <ClInclude Include="src\Lemon\Application.h" />
     <ClInclude Include="src\Lemon\myMath.h" />
     <ClInclude Include="src\Lemon\Sprite2D.h" />
+    <ClInclude Include="src\Lemon\Systems.h" />
     <ClInclude Include="src\Lemon\Transform.h" />
     <ClInclude Include="src\Lemon\Window.h" />
     <ClInclude Include="Legacy\timer.h" />

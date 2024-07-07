@@ -131,14 +131,22 @@ void UpdatePlayer(void)
 	if(AttCounter > 0)
 		AttCounter--;
 
+    //{
+    //    tagPOINT mouse = pInputSystem->CursorPos();
+    //    mouseX = (float)mouse.x;
+    //    mouseY = (float)mouse.y;
+    //}
 
-    mouseX = 0;
-    mouseY = 0;
+    //CursorPos.x += mouseX - oldMousePos.x;
+    //CursorPos.y += mouseY - oldMousePos.y;
 
-    CursorPos.x += mouseX - oldMousePos.x;
-    CursorPos.y += mouseY - oldMousePos.y;
+    {
+        tagPOINT mouse = pInputSystem->CursorPos();
+        CursorPos.x = mouse.x;
+        CursorPos.y = mouse.y;
+    }
     
-    oldMousePos = {mouseX, mouseY, 0.0};
+    //oldMousePos = {mouseX, mouseY, 0.0};
 
     vec4 stick = getSticks();
     XMFLOAT2 Linput;

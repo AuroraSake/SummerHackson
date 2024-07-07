@@ -2,7 +2,10 @@
 #include "Window.h"
 #include "string"
 
-WNDCLASSEX defaultWindowClass = 
+//static WndProc の message 転送が実装出来るまでの一時仕様
+#include "input.h"
+
+const static WNDCLASSEX defaultWindowClass = 
 {
     sizeof(WNDCLASSEX),
     CS_CLASSDC,
@@ -56,12 +59,15 @@ bool Window::CreatWindow(const WNDCLASSEX* const _windowClass)
 void Window::Show()
 {
     ShowWindow(m_HWindow, m_ShowWindow);
-    if (m_hideCursor)
-        while (ShowCursor(FALSE) >= 0);
 }
 
 bool Window::Update()
 {
+    if (m_HideCursor)
+        while (ShowCursor(false) >= 0);
+    else
+        while (ShowCursor(true) < 0);
+
     MSG windowMessage;
     if (PeekMessage(&windowMessage, NULL, 0, 0, PM_REMOVE))
     {
@@ -76,6 +82,7 @@ bool Window::Update()
     return 1;
 }
 
+
 LRESULT CALLBACK Window::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -84,10 +91,17 @@ LRESULT CALLBACK Window::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
         PostQuitMessage(0);
         break;
 
-    case WM_KEYDOWN:
-        switch (wParam)
-        {
-        }
+    //static WndProc の message 転送が実装出来たらこちらを使う
+    //case WM_LBUTTONDOWN:
+    //    m_HideCursor = true;
+    //    break;
+    //case WM_KEYDOWN:
+    //    switch (wParam)
+    //    {
+    //    case VK_ESCAPE:
+    //        m_HideCursor = false;
+    //        break;
+    //    }
         break;
 
     default:

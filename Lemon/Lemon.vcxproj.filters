@@ -99,6 +99,9 @@
     <ClInclude Include="src\Lemon\InputSystem.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lemon\Systems.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Legacy\camera.cpp">
