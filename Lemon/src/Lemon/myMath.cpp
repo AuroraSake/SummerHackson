@@ -21,7 +21,8 @@ DirectX::XMFLOAT3 Vector3::XMFLOAT3() const
 }
 DirectX::XMVECTOR Vector3::XMVECTOR() const
 {
-    return DirectX::XMLoadFloat3(&this->XMFLOAT3());
+    DirectX::XMFLOAT3 temp = this->XMFLOAT3();
+    return DirectX::XMLoadFloat3(&temp);
 }
 
 Vector3::Vector3(vec2 other)
@@ -35,6 +36,8 @@ Vector3::Vector3(const DirectX::XMVECTOR& other)
     this->y = temp.y;
     this->z = temp.z;
 }
+Vector3::Vector3(float _x, float _y)
+    : x(_x), y(_y), z(0) {}
 Vector3::Vector3(float _x, float _y, float _z)
     : x(_x), y(_y), z(_z) {}
 Vector3::Vector3(float _value)

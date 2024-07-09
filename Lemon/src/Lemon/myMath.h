@@ -93,6 +93,7 @@ public:
     Vector3(vec2 other);
     Vector3(const DirectX::XMFLOAT3 other);
     Vector3(const DirectX::XMVECTOR& other);
+    Vector3(float _x, float _y);
     Vector3(float _x, float _y, float _z);
     Vector3(float _value);
     Vector3(const Vector3&);

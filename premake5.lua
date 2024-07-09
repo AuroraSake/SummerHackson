@@ -21,6 +21,20 @@ project "Lemon"
     defines 
     {}
 
+    syslibdirs
+    {
+        "$(LibraryPath)",
+        "$(DXSDK_DIR)Lib/x64",
+        "$(VC_LibraryPath_x64)"
+    }
+
+    externalincludedirs 
+    {
+        "$(DXSDK_DIR)Include",
+        "$(IncludePath)",
+        "$(ProjectDir)"
+    }
+
     files
     {
         "%{prj.name}/**.h",
@@ -29,15 +43,11 @@ project "Lemon"
 
     includedirs
     {
-        "Lemon/src",
-        "$(IncludePath)",
-        "$(DXSDK_DIR)include"
+        "%{prj.name}/src/Lemon",
+        "%{prj.name}/Legacy"
     }
 
-    links
-    {
-        "Lemon",
-    }
+    debugdir "$(SolutionDir)"
 
     filter "system:windows"
         cppdialect "c++17"

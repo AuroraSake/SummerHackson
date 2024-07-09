@@ -16,6 +16,11 @@
 //_____________________________________________________________________//
 
 
+Transform::Transform(const Transform* other)
+    : m_pParent(other) {};
+
+
+
 void Transform::UpdateMMatrix()
 {
     m_mtxModel = DirectX::XMMatrixAffineTransformation(

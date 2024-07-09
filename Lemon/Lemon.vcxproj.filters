@@ -1,189 +1,186 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Legacy">
+      <UniqueIdentifier>{5AE484C0-4686-AF96-2F41-C3EA1B8236E7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="src\Lemon">
+      <UniqueIdentifier>{779554B3-E3FF-082A-2C3E-BACF98E7E67E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Legacy\camera.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\renderer.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\debugproc.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\sprite.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\title.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\input.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Legacy\bg.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\player.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\collision.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\sound.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\projectile.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\effect.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\result.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\timer.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Legacy\tutorial.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Legacy</Filter>
     </ClInclude>
     <ClInclude Include="Legacy\bullet.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Legacy</Filter>
     </ClInclude>
-    <ClInclude Include="Legacy\fade.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Legacy\camera.h">
+      <Filter>Legacy</Filter>
     </ClInclude>
-    <ClInclude Include="Legacy\score.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Legacy\collision.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\debugproc.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\effect.h">
+      <Filter>Legacy</Filter>
     </ClInclude>
     <ClInclude Include="Legacy\enemy.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Legacy</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lemon\Application.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Legacy\fade.h">
+      <Filter>Legacy</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lemon\myMath.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lemon\Sprite2D.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lemon\Window.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lemon\Transform.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="src\LegacySystems.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Legacy\input.h">
+      <Filter>Legacy</Filter>
     </ClInclude>
     <ClInclude Include="Legacy\main.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Legacy</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lemon\SceneManager.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Legacy\player.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\projectile.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\renderer.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\result.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\score.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\sound.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\sprite.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\timer.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\title.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Legacy\tutorial.h">
+      <Filter>Legacy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LegacySystems.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lemon\Application.h">
+      <Filter>src\Lemon</Filter>
     </ClInclude>
     <ClInclude Include="src\Lemon\InputSystem.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>src\Lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lemon\SceneManager.h">
+      <Filter>src\Lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lemon\Sprite2D.h">
+      <Filter>src\Lemon</Filter>
     </ClInclude>
     <ClInclude Include="src\Lemon\Systems.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>src\Lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lemon\Transform.h">
+      <Filter>src\Lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lemon\Window.h">
+      <Filter>src\Lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lemon\myMath.h">
+      <Filter>src\Lemon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Legacy\camera.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\debugproc.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\sprite.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\renderer.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\input.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Legacy\bg.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\player.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\collision.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\sound.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\projectile.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\effect.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\result.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\timer.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\title.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Legacy\tutorial.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Legacy</Filter>
     </ClCompile>
     <ClCompile Include="Legacy\bullet.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\camera.cpp">
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\collision.cpp">
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\debugproc.cpp">
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\effect.cpp">
+      <Filter>Legacy</Filter>
     </ClCompile>
     <ClCompile Include="Legacy\fade.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\input.cpp">
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\player.cpp">
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\projectile.cpp">
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\renderer.cpp">
+      <Filter>Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Legacy\result.cpp">
+      <Filter>Legacy</Filter>
     </ClCompile>
     <ClCompile Include="Legacy\score.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Legacy</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lemon\Application.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Legacy\sound.cpp">
+      <Filter>Legacy</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lemon\myMath.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Legacy\sprite.cpp">
+      <Filter>Legacy</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lemon\Window.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Legacy\timer.cpp">
+      <Filter>Legacy</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lemon\Transform.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Legacy\title.cpp">
+      <Filter>Legacy</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lemon\Sprite2D.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Legacy\tutorial.cpp">
+      <Filter>Legacy</Filter>
     </ClCompile>
     <ClCompile Include="src\LegacySystems.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lemon\Application.cpp">
+      <Filter>src\Lemon</Filter>
     </ClCompile>
     <ClCompile Include="src\Lemon\EntryPoint.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Lemon\SceneManager.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>src\Lemon</Filter>
     </ClCompile>
     <ClCompile Include="src\Lemon\InputSystem.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>src\Lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lemon\SceneManager.cpp">
+      <Filter>src\Lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lemon\Sprite2D.cpp">
+      <Filter>src\Lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lemon\Transform.cpp">
+      <Filter>src\Lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lemon\Window.cpp">
+      <Filter>src\Lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lemon\myMath.cpp">
+      <Filter>src\Lemon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

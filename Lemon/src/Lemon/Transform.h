@@ -18,6 +18,8 @@
 class Transform
 {
 public:
+    Transform(const Transform* other);
+
     Vector3 m_position = 0.0f;
     Vector3 m_rotation = 0.0f;
     Vector3 m_scale    = 1.0f;
@@ -30,4 +32,13 @@ public:
     void UpdateMMatrix();
     void UpdateDirection();
     void Update();
+
+    const Transform* Parent() const
+    {
+        return m_pParent;
+    }
+
+private:
+    const Transform*  m_pParent = nullptr;
+    Transform** m_ppChild = nullptr;
 };
