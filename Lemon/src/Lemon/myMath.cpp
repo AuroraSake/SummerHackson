@@ -1,5 +1,6 @@
 #pragma  once
 #include "myMath.h"
+#include "iostream"
 //_____________________________________________________________________//
 //
 // myMath
@@ -96,12 +97,22 @@ Vector3 operator*(Vector3 lhs, const Vector3& rhs)
 {
     return lhs *= rhs;
 }
+Vector3 operator*(Vector3 lhs, const DirectX::XMMATRIX& rhs)
+{
+    DirectX::XMVECTOR temp = lhs.XMVECTOR();
+    temp = DirectX::XMVector3TransformCoord(temp, rhs);
+    return Vector3(temp);
+}
 Vector3 operator/(Vector3 lhs, const Vector3& rhs)
 {
     return lhs /= rhs;
 }
 
-
+Vector3& Vector3::operator=(const float hrs)
+{
+    *this = Vector3(hrs);
+    return *this;
+}
 
 
 
@@ -139,4 +150,11 @@ Vector3 Vector3::Rotate(const Vector3& other)
     DirectX::XMFLOAT3 temp;
     XMStoreFloat3( &temp, DirectX::XMVector3TransformCoord(this->XMVECTOR(), rotateMtx));
     return Vector3(temp.x, temp.y, temp.z);
+}
+
+void Vector3::print()
+{
+    std::cout << "x: " << x
+        << "\ty: " << y
+        << "\tz: " << z << std::endl;
 }

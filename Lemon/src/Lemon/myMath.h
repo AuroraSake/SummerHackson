@@ -20,6 +20,8 @@
 //vec2 ~ vec4 float ‚Ì•À‚Ñ‚¾‚¯
 //ˆê‘Îô
 //vec2‚¾‚¯ ‰‰Zq‚ªg‚¦‚é
+
+
 struct vec2
 {
     float x;
@@ -114,8 +116,10 @@ public:
     friend Vector3 operator+(Vector3 lhs, const Vector3& rhs);
     friend Vector3 operator-(Vector3 lhs, const Vector3& rhs);
     friend Vector3 operator*(Vector3 lhs, const Vector3& rhs);
+    friend Vector3 operator*(Vector3 lhs, const DirectX::XMMATRIX& rhs);
     friend Vector3 operator/(Vector3 lhs, const Vector3& rhs);
 
+    Vector3& operator=(const float hrs);
 
 
     //DirectX::XMFLOAT3 XMFLOAT3(const Vector3& other);
@@ -126,6 +130,7 @@ public:
 
 
     Vector3 Rotate(const Vector3& other);
+    void print();
 };
 
 Vector3 Dot(Vector3& lhs, Vector3& rhs);
