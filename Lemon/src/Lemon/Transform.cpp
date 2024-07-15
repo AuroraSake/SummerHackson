@@ -29,42 +29,54 @@ Transform::Transform(const char* _name)
 
 void Transform::UpdateModelMatrix()
 {
-    m_mtxModel = DirectX::XMMatrixAffineTransformation(
-        m_scale.XMVECTOR(),
+    mtxModel = DirectX::XMMatrixAffineTransformation(
+        scale.XMVECTOR(),
         Vector3(0.0f).XMVECTOR(),
-        DirectX::XMQuaternionRotationRollPitchYawFromVector(m_rotation.XMVECTOR()),
-        m_position.XMVECTOR()
+        DirectX::XMQuaternionRotationRollPitchYawFromVector(rotation.XMVECTOR()),
+        position.XMVECTOR()
     );
 }
 
-
-DirectX::XMMATRIX Transform::WorldMatrix()
+void Transform::UpdateWorldMatrix()
 {
-    DirectX::XMMATRIX temp = m_mtxModel;
+    DirectX::XMMATRIX temp = mtxModel;
     temp.r[3] = { 0.0f, 0.0f, 0.0f, 1.0f };
     Transform** pNode = &(this->m_pParent);
+    
     while(*pNode)
     {
-        temp = (*pNode)->m_mtxModel * temp;
+        if ((*pNode)->m_LateUpdate)
+        {
+            temp = (*pNode)->mtxWorld * temp;
+            break;
+        }
+        temp = (*pNode)->mtxModel * temp;
         pNode = &((*pNode)->m_pParent);
     }
-    return temp;
+    mtxWorld = temp;
 }
 
 
 void Transform::UpdateDirection()
 {
-    m_forward = Vector3(0.0f, 0.0f, 1.0f).Rotate(m_rotation);
-    m_up      = Vector3(0.0f, 1.0f, 0.0f).Rotate(m_rotation);
+    forward = Vector3(0.0f, 0.0f, 1.0f).Rotate(rotation);
+    up      = Vector3(0.0f, 1.0f, 0.0f).Rotate(rotation);
 }
 
 
 void Transform::Update()
 {
     UpdateModelMatrix();
+    m_LateUpdate = false;
 }
 
-const Transform* Transform::Parent() const
+void Transform::LateUpdate()
+{
+    UpdateWorldMatrix();
+    m_LateUpdate = true;
+}
+
+Transform* Transform::Parent() const
 {
     return m_pParent;
 }
@@ -110,8 +122,8 @@ void Transform::Print()
 void Transform::PrintPos()
 {
     Update();
-    DirectX::XMMATRIX temp = WorldMatrix();
-    (m_position * WorldMatrix()).print();
+    UpdateWorldMatrix();
+    (position * mtxWorld).print();
 }
 
 void Transform::PrintChild()

@@ -89,6 +89,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Lemon\Component\Component.h" />
     <ClInclude Include="src\Lemon\GameObject.h" />
     <ClInclude Include="Legacy\bg.h" />
     <ClInclude Include="Legacy\bullet.h" />
@@ -121,6 +122,7 @@
     <ClInclude Include="src\Lemon\myMath.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Lemon\Component\Component.cpp" />
     <ClCompile Include="src\Lemon\GameObject.cpp" />
     <ClCompile Include="Legacy\bg.cpp" />
     <ClCompile Include="Legacy\bullet.cpp" />

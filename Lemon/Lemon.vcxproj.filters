@@ -100,6 +100,7 @@
       <Filter>src\Lemon</Filter>
     </ClInclude>
     <ClInclude Include="src\Lemon\GameObject.h" />
+    <ClInclude Include="src\Lemon\Component\Component.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Legacy\bg.cpp">
@@ -184,5 +185,6 @@
       <Filter>src\Lemon</Filter>
     </ClCompile>
     <ClCompile Include="src\Lemon\GameObject.cpp" />
+    <ClCompile Include="src\Lemon\Component\Component.cpp" />
   </ItemGroup>
 </Project>

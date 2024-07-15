@@ -2,6 +2,7 @@
 #include "myMath.h"
 #include <string>
 #include <iostream>
+#include <vector>
 //_____________________________________________________________________//
 //
 // Transform
@@ -16,9 +17,6 @@
 //  object pool パターンで連続メモリー空間で格納する
 //_____________________________________________________________________//
 
-
-
-
 class Transform
 {
 public:
@@ -26,30 +24,30 @@ public:
     Transform(const char* name);
     //Transform(Transform* other);
 
-    Vector3 m_position = 0.0f;
-    Vector3 m_rotation = 0.0f;
-    Vector3 m_scale = 1.0f;
+    Vector3 position = 0.0f;
+    Vector3 rotation = 0.0f;
+    Vector3 scale = 1.0f;
 
-    Vector3 m_forward = Vector3(0.0f, 0.0f, 1.0f);
-    Vector3 m_up = Vector3(0.0f, 1.0f, 0.0f);
+    Vector3 forward = Vector3(0.0f, 0.0f, 1.0f);
+    Vector3 up = Vector3(0.0f, 1.0f, 0.0f);
 
-    DirectX::XMMATRIX m_mtxModel = DirectX::XMMatrixIdentity();
+    DirectX::XMMATRIX mtxModel = DirectX::XMMatrixIdentity();
+    DirectX::XMMATRIX mtxWorld = DirectX::XMMatrixIdentity();
 
-    void UpdateModelMatrix();
-    void UpdateDirection();
-    void Update();
-
-    DirectX::XMMATRIX WorldMatrix();
-
-    const Transform* Parent() const;
+    Transform* Parent() const;
     void SetParent(Transform& parent);
     void SetParent(Transform* parent);
+    //set self or Null as parent would remove the parent
+    //parentをクリア出来るには：自身かNull を設定する
 
     void Print();
     void PrintPos();
     void PrintChild();
     void Rename(const char* name);
+
 private:
+    bool m_InUse = false;
+    bool m_LateUpdate = false;
     std::string name = "Null";
 
     Transform* m_pParent = nullptr;
@@ -59,4 +57,10 @@ private:
     Transform* m_pLast = nullptr;
 
     void RemoveChild(Transform& child);
+    
+    void UpdateModelMatrix();
+    void UpdateWorldMatrix();
+    void UpdateDirection();
+    void Update();
+    void LateUpdate();
 };
